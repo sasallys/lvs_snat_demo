@@ -1,0 +1,40 @@
+# Linux LVS + SNAT 
+
+This is a demonstration of level4 load balancing with SNAT using LVS.
+
+Vagrant and Puppet are used to make the setup simple and repeatable.
+
+## Setting it up
+
+### Prerequisites
+
+* You will need vagrant installed to make this work. The best way to do this is to visit <http://www.vagrantup.com/> and follow the installation instructions.
+* You will need an Ubuntu 12.04LTS box installed. `vagrant box add ubuntu-12.04-64 http://files.vagrantup.com/precise64.box`
+* This demo will run three virtual guests. Ensure you have enough cpu and ram to handle this.
+
+### Setup
+
+* Clone this repository.
+* `cd <repo>/app1`
+* `vagrant up`
+* `cd ../app2`
+* `vagrant up`
+* `cd ../lb1`
+* `vagrant up`
+
+### Results
+
+From the host:
+
+    $ curl 192.168.200.20
+    app1
+    $ curl 192.168.200.20
+    app2
+
+
+
+
+
+
+
+

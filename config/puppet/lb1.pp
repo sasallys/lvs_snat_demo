@@ -60,7 +60,7 @@ node lb1 {
       # "set iface[. = 'eth1']/network 192.168.200.0",
       # "set iface[. = 'eth1']/gateway 192.168.200.1",
       "set iface[. = 'eth1']/pre-up 'iptables-restore < /etc/myconf/iptables.rules'",
-      "set iface[. = 'eth1']/post-down 'iptables-restore < /etc/iptables.downrules'",
+      "set iface[. = 'eth1']/post-down 'iptables-save > /etc/myconf/iptables.rules'",
       "set auto[child::1 = 'eth2']/1 eth2",
       "set iface[. = 'eth2'] eth2",
       "set iface[. = 'eth2']/family inet",
